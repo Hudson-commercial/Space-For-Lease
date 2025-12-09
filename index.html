@@ -110,14 +110,18 @@
       }
       .logo-image-span {  top: -.5em}
       }
-      @media only screen and (max-width: 1200px) { .spacer-div {display: none;} .card-image { margin-left: 0px;} .agent-logo-img {width: 90%} .page-header-image {background-position: center 0px;}
+      @media only screen and (max-width: 1200px) { .spacer-div {display: none;} .card-image { margin-left: 0px;} .agent-logo-img {width: 90%} .page-header-image {background-position: center 0px !important;}
       .footer {
       background: rgb(23, 72, 115);
       }
       .header-3 .title{ margin-top: 70%; }
       .agent-area {margin-top: -2em;}
       .fonts-hudson {font-size: 1.4em !important;}
-      .page-header-image {background-position: center -200px;}
+      .card-background:after {
+      background: none !important; /* Removes the background color/gradient overlay */
+      background-image: none !important; /* Ensures any gradient image is also removed */
+      opacity: 1 !important; /* Ensures full visibility if opacity was used instead of background */
+      }
    </style>
    <head>
       <meta charset="utf-8" />
@@ -186,7 +190,7 @@
          </div>
       </nav>
       <div class="page-header page-header-small">
-         <div class="page-header-image" style="background-image: url('images/image-banner.jpg'); ">
+         <div class="page-header-image" style="background-image: url('images/image-banner.jpg'); background-position: center -170px">
          </div>
          <div class="content-center">
             <div class="row">
@@ -254,7 +258,7 @@
                   </div>
                   <div class="row">
                      <div class="col-md-5 ml-auto">
-                        <div class="card card-background card-background-product card-raised" style="background-image: url('images/image-lobby-4.jpg')">
+                        <div class="card card-background card-background-product card-raised" id="card-background" style="background-image: url('images/image-lobby-4.jpg');  ">
                            <div class="card-body">
                               <h2 class="card-title">Location</h2>
                               <p class="card-description font-weight-normal">
